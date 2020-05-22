@@ -1,3 +1,11 @@
 .Menu {
+  ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
+    li {
+      margin-right: 10px;
+    }
+  }
 }

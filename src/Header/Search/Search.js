@@ -3,7 +3,11 @@ import './Search.scss';
 
 class Search extends Component {
   render() {
-    return <div className="Search">Search</div>;
+    return (
+      <div className="Search">
+        <input type="text" placeholder="Search" />
+      </div>
+    );
   }
 }
 

@@ -3,7 +3,15 @@ import './Menu.scss';
 
 class Menu extends Component {
   render() {
-    return <div>Menu</div>;
+    return (
+      <nav className="Menu">
+        <ul>
+          <li>&hearts;</li>
+          <li>&hearts;</li>
+          <li>&hearts;</li>
+        </ul>
+      </nav>
+    );
   }
 }
 
