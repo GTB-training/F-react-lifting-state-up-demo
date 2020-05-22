@@ -1,0 +1,21 @@
+.UserProfile {
+  flex: 1 100%;
+  width: 900px;
+  margin: 0 auto;
+  padding: 30px 20px 0;
+
+  .posts-navbar {
+    border-top: 1px solid #dbdbdb;
+    color: #8e8e8e;
+    ul {
+      display: flex;
+      justify-content: center;
+
+      li {
+        margin-right: 20px;
+        height: 40px;
+        line-height: 60px;
+      }
+    }
+  }
+}
