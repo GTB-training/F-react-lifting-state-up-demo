@@ -1,3 +1,32 @@
 .UserInfo {
   margin-bottom: 44px;
+  display: flex;
+
+  .avatar {
+    width: 300px;
+
+    .fake-image {
+      margin: 0 auto;
+      width: 150px;
+      height: 150px;
+      border-radius: 100%;
+      background-color: lightblue;
+    }
+  }
+
+  .user {
+    h2 {
+      font-size: 28px;
+      line-height: 32px;
+    }
+
+    ul {
+      display: flex;
+      font-size: 16px;
+
+      li {
+        margin-right: 10px;
+      }
+    }
+  }
 }
