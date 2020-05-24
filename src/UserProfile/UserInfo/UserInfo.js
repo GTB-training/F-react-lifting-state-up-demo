@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './UserInfo.scss';
+import userData from '../../data/user.json';
 
 class UserInfo extends Component {
   constructor(props) {
@@ -12,14 +13,7 @@ class UserInfo extends Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({
-        user: {
-          name: 'Nana',
-          statistics: {
-            posts: 1000,
-            followers: 100,
-            following: 200,
-          },
-        },
+        user: userData,
       });
     }, 1000);
   }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './UserProfile.scss';
 import UserInfo from './UserInfo/UserInfo';
 import Posts from './Posts/Posts';
-import postsJson from '../posts.json';
+import postsData from '../data/posts.json';
 
 class UserProfile extends Component {
   constructor(props) {
@@ -15,10 +15,10 @@ class UserProfile extends Component {
   }
 
   componentDidMount() {
-    const taggedPosts = postsJson.filter((post) => !post.isTagged);
+    const taggedPosts = postsData.filter((post) => !post.isTagged);
     setTimeout(() => {
       this.setState({
-        posts: postsJson,
+        posts: postsData,
         taggedPosts,
       });
     }, 1000);
