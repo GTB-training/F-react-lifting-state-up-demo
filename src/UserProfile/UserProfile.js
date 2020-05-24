@@ -2,22 +2,47 @@ import React, { Component } from 'react';
 import './UserProfile.scss';
 import UserInfo from './UserInfo/UserInfo';
 import Posts from './Posts/Posts';
-import TaggedPosts from './TaggedPosts/TaggedPosts';
+import postsJson from '../posts.json';
 
 class UserProfile extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showTagged: false,
+      posts: [],
+      taggedPosts: [],
+    };
+  }
+
+  componentDidMount() {
+    const taggedPosts = postsJson.filter((post) => !post.isTagged);
+    setTimeout(() => {
+      this.setState({
+        posts: postsJson,
+        taggedPosts,
+      });
+    }, 1000);
+  }
+
+  toggleShowTagged = (isTagged) => {
+    this.setState({
+      showTagged: isTagged,
+    });
+  };
+
   render() {
+    const { showTagged, posts, taggedPosts } = this.state;
     return (
       <main className="UserProfile">
         <UserInfo />
         <div className="posts-navbar">
           <ul>
-            <li>Posts</li>
-            <li>Tagged</li>
+            <li onClick={() => this.toggleShowTagged(false)}>Posts</li>
+            <li onClick={() => this.toggleShowTagged(true)}>Tagged</li>
           </ul>
         </div>
         <div className="posts-wrapper">
-          <Posts />
-          <TaggedPosts />
+          {showTagged ? <Posts posts={taggedPosts} /> : <Posts posts={posts} />}
         </div>
       </main>
     );
