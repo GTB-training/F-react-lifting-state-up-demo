@@ -14,7 +14,7 @@ class Header extends Component {
             height="30px"
           />
           <Search />
-          <Menu />
+          <Menu username={this.props.username} />
         </div>
       </header>
     );

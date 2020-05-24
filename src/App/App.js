@@ -21,10 +21,11 @@ class App extends Component {
   }
 
   render() {
+    const { user } = this.state;
     return (
       <div data-testid="app" className="App">
-        <Header />
-        <UserProfile user={this.state.user} />
+        <Header username={user ? user.name : null} />
+        <UserProfile user={user} />
       </div>
     );
   }

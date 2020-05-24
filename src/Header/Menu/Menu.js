@@ -6,6 +6,7 @@ class Menu extends Component {
     return (
       <nav className="Menu">
         <ul>
+          <li>Hi, {this.props.username}</li>
           <li>&hearts;</li>
           <li>&hearts;</li>
           <li>&hearts;</li>
