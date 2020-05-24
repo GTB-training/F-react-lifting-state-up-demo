@@ -1,25 +1,9 @@
 import React, { Component } from 'react';
 import './UserInfo.scss';
-import userData from '../../data/user.json';
 
 class UserInfo extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      user: {},
-    };
-  }
-
-  componentDidMount() {
-    setTimeout(() => {
-      this.setState({
-        user: userData,
-      });
-    }, 1000);
-  }
-
   render() {
-    const { name, statistics } = this.state.user;
+    const { name, statistics } = this.props.user;
     return (
       <section className="UserInfo">
         <div className="avatar">

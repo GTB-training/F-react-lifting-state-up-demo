@@ -32,9 +32,10 @@ class UserProfile extends Component {
 
   render() {
     const { showTagged, posts, taggedPosts } = this.state;
+    const { user } = this.props;
     return (
       <main className="UserProfile">
-        <UserInfo />
+        <UserInfo user={user} />
         <div className="posts-navbar">
           <ul>
             <li onClick={() => this.toggleShowTagged(false)}>Posts</li>
